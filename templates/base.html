@@ -3,7 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock  %}</title>
+    {% block style %}
     <link rel="stylesheet" href="../static/css/style.css">
+    {% endblock %}
 </head>
 <body>
     <div class="page">
@@ -16,7 +18,7 @@
             <a href="#">Pricing</a>
             <a href="#">Support</a>
             <a href="{{url_for('login')}}" class="getStarted">Get Started</a>
-            <a href="#" class="signIn">Sign in</a>
+            <a href="#" class="signIn">Sign up</a>
             <img src="../static/images/search.png">
         </nav>
         <img src="../static/images/pm-landing1.jpg" class="mainImg">

@@ -2,8 +2,23 @@
 
 {% block title %}Get Started{% endblock  %}
 
+{% block style %}
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/loginStyle.css">
+{% endblock %}
+
 {% block content %}
-<h1>Login here</h1>
+<div class="loginBox">
+    <div class="card">
+      <h2>Login Here</h2>
+      <form>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <span>Already Have an Account? <a href="#">Sign Up</a></span>
+      </form>
+    </div>
+  </div>
 
 {% endblock  %}
 
