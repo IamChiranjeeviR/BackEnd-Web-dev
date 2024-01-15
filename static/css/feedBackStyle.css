@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .feedBox{
+    width: 40%;
+    position: relative;
+    top: 10%;
+    left: 32%;
+    box-shadow: 0px 5px 20px 0px rgba(30, 43, 214, 0.451);
+    border-radius: 10px;
+  }
+  .feedBox h2{
+    width: 50%;
+    text-align: center;
+    padding: 20px 0px;
+    border-bottom: 3px solid royalblue;
+    position: relative;
+    left: 24%;
+    top: 3%;
+  }
+  .feedBox h2 span{
+    color: rgb(39, 81, 208);
+  }
+  .feedBox textarea{
+    margin: 20px;
+    font-size: 20px;
+    padding: 20px;
+    position: relative;
+    left: 6%;
+    resize: none;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .feedBox button{
+    width: 70%;
+    padding: 5px 0px;
+    font-size: 20px;
+    position: relative;
+    left: 15%;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    background: royalblue;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: all ease 0.5s;
+  }
+  .feedBox button:hover{
+    box-shadow: 0px 5px 20px 0px rgb(0,0,0,0.3);
+    font-weight: 600;
+  }
