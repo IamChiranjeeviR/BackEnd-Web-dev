@@ -132,3 +132,36 @@
     top: 73%;
     left: 9.5%;
 }
+.page .flashes .msgBox{
+    padding: 10px;
+    font-size: 30px;
+    border: 5px solid royalblue ;
+    width: 30%;
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease 0.5s;
+}
+.page .flashes .msgBox button{
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 30%;
+    background: royalblue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.page .flashes .msgBox button:hover{
+    box-shadow: 0xp 5px 10px 0px rgb(0,0,0,0.2);
+    border: 1px solid black;
+}
+.page .flashes .msgBox button a{
+    text-decoration: none;
+    color: #fff;
+}

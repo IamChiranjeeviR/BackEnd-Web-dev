@@ -21,6 +21,18 @@
             <a href="#" class="signIn">Sign up</a>
             <img src="../static/images/search.png">
         </nav>
+        <div class="flashes">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages  %}
+                        <div class="msgBox">
+                        <span>{{message}}</span>
+                        <button><a href="{{url_for('home')}}">OK</a></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         {% block img %}
         <img src="../static/images/pm-landing1.jpg" class="mainImg">        
         {% endblock %}
