@@ -11,6 +11,10 @@ def home():
 def login():
     return render_template('login.html')
 
+@app.route("/feedBack")
+def feedBack():
+    return render_template('feedBack.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'),404

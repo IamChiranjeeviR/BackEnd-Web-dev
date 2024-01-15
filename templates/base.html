@@ -16,12 +16,15 @@
             <a href="{{url_for('home')}}">Home</a>
             <a href="#">Our Stories</a>
             <a href="#">Pricing</a>
-            <a href="#">Support</a>
+            <a href="{{url_for('feedBack')}}">Support</a>
             <a href="{{url_for('login')}}" class="getStarted">Get Started</a>
             <a href="#" class="signIn">Sign up</a>
             <img src="../static/images/search.png">
         </nav>
-        <img src="../static/images/pm-landing1.jpg" class="mainImg">
+        {% block img %}
+        <img src="../static/images/pm-landing1.jpg" class="mainImg">        
+        {% endblock %}
+
         {% block content %} 
         {% endblock  %}
 

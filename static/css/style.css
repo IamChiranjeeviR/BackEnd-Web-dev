@@ -115,6 +115,9 @@
     left: 10.3%;
     cursor: pointer;
 }
+.page .start a{
+    text-decoration: none;
+}
 .read{
     background: #fff;
     left: 20%;
