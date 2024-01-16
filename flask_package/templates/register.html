@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/registerstyle.css">
+{% endblock %}
+
+{% block content %}
+    
+<div class="signUpBox">
+    <div class="card">
+      <h2>Register an Account</h2>
+      <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div>{{form.Name}}</div>
+        <div>{{form.email}}</div>
+        <div>{{form.password}}</div>
+        <div>{{form.confirmPassword}}</div>
+        <button type="submit">Sign Up</button>
+        <span>Already Have an Account? <a href="{{url_for('login')}}">Login</a></span>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block mainContent %}{% endblock %}
