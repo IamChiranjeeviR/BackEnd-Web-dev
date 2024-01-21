@@ -13,6 +13,13 @@
             <div class="tri"></div>
             <div class="cir"></div>
             <h4>Codesk</h4>
+            {% if current_user.is_authenticated %}
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="#">Our Stories</a>
+            <a href="#">Pricing</a>
+            <a href="{{url_for('feedBack')}}">Support</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+            {% else %}
             <a href="{{url_for('home')}}">Home</a>
             <a href="#">Our Stories</a>
             <a href="#">Pricing</a>
@@ -20,6 +27,7 @@
             <a href="{{url_for('login')}}" class="getStarted">Get Started</a>
             <a href="{{url_for('register')}}" class="signIn">Sign up</a>
             <img src="../static/images/search.png">
+            {% endif %}
         </nav>
         <div class="flashes">
             {% with messages = get_flashed_messages() %}
@@ -49,7 +57,10 @@
             speedometer, radar, or aircraft controller. Why<br>
             work without a competent project manager?  
         </p>
+        {% if current_user.is_authenticated %}
+        {% else %}
         <button class="start"><a href="{{url_for('login')}}">Get Started</a></button>
+        {% endif %}
         <button class="read">Read our stories</button>
         <img src="../static/images/facebook.png"class="fb">
         <img src="../static/images/instagram.png"class="ig">

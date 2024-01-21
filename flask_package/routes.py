@@ -3,7 +3,7 @@ from flask_package.forms import loginForm, registrationForm
 from flask_package.models import User
 from flask_package import app,db,bcrypt
 from datetime import datetime
-from flask_login import login_user
+from flask_login import login_user,logout_user,current_user
 
 # Use the app context to create the database tables
 with app.app_context():
@@ -30,13 +30,15 @@ def login():
         user = User.query.filter_by(EmailId = form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
-            return redirect(url_for('ins'))
+            return redirect(url_for('home'))
         else:
             flash("Invalid Email or password")
     return render_template('login.html', title = 'Login', form=form)
 
 @app.route('/register', methods=['GET','POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = registrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data)
@@ -50,9 +52,10 @@ def register():
         app.logger.error('Validation errors:'+ str(form.errors))
     return render_template('register.html', title = 'Register', form = form)
 
-@app.route("/ins")
-def ins():
-    return "Successfully Logged in"
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
 
 @app.route("/feedBack", methods=['GET','POST'])
 def feedBack():
